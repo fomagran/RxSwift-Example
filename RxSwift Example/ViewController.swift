@@ -10,13 +10,17 @@ import RxSwift
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var completed2: UILabel!
+    @IBOutlet weak var num2: UILabel!
     @IBOutlet weak var completed: UILabel!
     @IBOutlet weak var number: UILabel!
     
     var count = 0.0
     
-    var timer:Timer?
+    var timer1:Timer?
+    var timer2:Timer?
     var disposable:Disposable?
+    var disposable2:Disposable?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +29,8 @@ class ViewController: UIViewController {
     }
     
     func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        timer1 = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        timer2 = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(update2), userInfo: nil, repeats: true)
     }
     
     @objc func update() {
@@ -33,9 +38,15 @@ class ViewController: UIViewController {
         number.text = String(format: "%.1f",  count) + String("초가 걸렸어요")
     }
     
+    @objc func update2() {
+        count += 0.1
+        num2.text = String(format: "%.1f",  count) + String("초가 걸렸어요")
+    }
+    
     @IBAction func stop(_ sender: Any) {
         disposable?.dispose()
-        timer?.invalidate()
+        timer1?.invalidate()
+        timer2?.invalidate()
         completed.text = "취소되었습니다."
     }
     
@@ -45,6 +56,14 @@ class ViewController: UIViewController {
             .subscribe({[weak self] _ in
                 self?.completed.text = "Completed!"
             })
+        
+        disposable2 = rxCountNumber()
+            .observeOn(MainScheduler.instance)
+            .subscribe({[weak self] _ in
+                self?.completed2.text = "Completed!"
+            })
+        
+        
     }
     
     func countNumber(completed: @escaping (Bool?) -> Void) {
@@ -52,7 +71,17 @@ class ViewController: UIViewController {
             for _ in 0...10000000 {
             
             }
-            self.timer?.invalidate()
+            self.timer1?.invalidate()
+            completed(true)
+        }
+    }
+    
+    func countNumber2(completed: @escaping (Bool?) -> Void) {
+        DispatchQueue.global().async {
+            for _ in 0...20000000 {
+            
+            }
+            self.timer2?.invalidate()
             completed(true)
         }
     }
@@ -60,6 +89,16 @@ class ViewController: UIViewController {
     func rxCountNumber() -> Observable<Bool> {
         return Observable.create { [weak self] o in
             self?.countNumber { (result) in
+                o.onNext(result ?? false)
+                o.onCompleted()
+            }
+            return Disposables.create()
+        }
+    }
+    
+    func rxCountNumber2() -> Observable<Bool> {
+        return Observable.create { [weak self] o in
+            self?.countNumber2 { (result) in
                 o.onNext(result ?? false)
                 o.onCompleted()
             }

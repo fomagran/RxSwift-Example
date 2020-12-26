@@ -35,20 +35,38 @@
                                     <action selector="stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WQU-d4-gji"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRU-0H-8Wp">
+                                <rect key="frame" x="186.5" y="325" width="41.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxT-aj-SqC">
+                                <rect key="frame" x="186.5" y="354" width="41.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="gRU-0H-8Wp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="29n-58-BpY"/>
                             <constraint firstItem="lu9-Ao-y2y" firstAttribute="centerX" secondItem="5jL-yS-aEw" secondAttribute="centerX" id="660-M8-Mz5"/>
                             <constraint firstItem="5jL-yS-aEw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6oh-Yx-itM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="D26-ae-bLg" secondAttribute="bottom" constant="241" id="Rf1-BC-EVr"/>
+                            <constraint firstItem="gRU-0H-8Wp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="281" id="Seh-m1-RGL"/>
+                            <constraint firstItem="RxT-aj-SqC" firstAttribute="centerX" secondItem="gRU-0H-8Wp" secondAttribute="centerX" id="Xbm-jY-9Ri"/>
                             <constraint firstItem="lu9-Ao-y2y" firstAttribute="top" secondItem="5jL-yS-aEw" secondAttribute="bottom" constant="8" symbolic="YES" id="dg1-4s-Ycv"/>
                             <constraint firstItem="D26-ae-bLg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lOP-ep-WZw"/>
+                            <constraint firstItem="RxT-aj-SqC" firstAttribute="top" secondItem="gRU-0H-8Wp" secondAttribute="bottom" constant="8" symbolic="YES" id="qBd-D6-Cl8"/>
                             <constraint firstItem="5jL-yS-aEw" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="uwx-k7-9Qh"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="completed" destination="lu9-Ao-y2y" id="rSo-iX-59f"/>
+                        <outlet property="completed2" destination="RxT-aj-SqC" id="9Cc-Dh-cFq"/>
+                        <outlet property="num2" destination="gRU-0H-8Wp" id="skW-L6-dKE"/>
                         <outlet property="number" destination="5jL-yS-aEw" id="cmC-tK-ee2"/>
                     </connections>
                 </viewController>
