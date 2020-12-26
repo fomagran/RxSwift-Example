@@ -19,8 +19,7 @@ class ViewController: UIViewController {
     
     var timer1:Timer?
     var timer2:Timer?
-    var disposable:Disposable?
-    var disposable2:Disposable?
+    var disposeBag:DisposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,24 +43,28 @@ class ViewController: UIViewController {
     }
     
     @IBAction func stop(_ sender: Any) {
-        disposable?.dispose()
+        disposeBag = DisposeBag()
         timer1?.invalidate()
         timer2?.invalidate()
         completed.text = "취소되었습니다."
+        completed2.text = "취소되었습니다."
     }
     
     func isCompletedCount() {
-        disposable = rxCountNumber()
+        
+         rxCountNumber()
             .observeOn(MainScheduler.instance)
             .subscribe({[weak self] _ in
                 self?.completed.text = "Completed!"
             })
+            .disposed(by: disposeBag)
         
-        disposable2 = rxCountNumber()
+        rxCountNumber()
             .observeOn(MainScheduler.instance)
             .subscribe({[weak self] _ in
                 self?.completed2.text = "Completed!"
             })
+            .disposed(by: disposeBag)
         
         
     }
