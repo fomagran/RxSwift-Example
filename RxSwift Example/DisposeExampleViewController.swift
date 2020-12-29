@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class ViewController: UIViewController {
+class DisposeExampleViewController: UIViewController {
     
     @IBOutlet weak var completed2: UILabel!
     @IBOutlet weak var num2: UILabel!
