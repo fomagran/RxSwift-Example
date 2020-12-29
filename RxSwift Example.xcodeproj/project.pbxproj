@@ -29,6 +29,7 @@
 		0444935B2596E6EE0091EE88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04AEB7202599873600CA9795 /* LoginExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginExampleViewController.swift; sourceTree = "<group>"; };
 		04AEB723259989AC00CA9795 /* LoginRxExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRxExampleViewController.swift; sourceTree = "<group>"; };
+		04F584D3259AE25500A614DD /* RxSwiftTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxSwiftTest.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6B168DBD33EC7A2C4306F9DD /* Pods-RxSwift Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift Example.debug.xcconfig"; path = "Target Support Files/Pods-RxSwift Example/Pods-RxSwift Example.debug.xcconfig"; sourceTree = "<group>"; };
 		852A4F150E03BD629B3741AF /* Pods_RxSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CE98B99A1DE0ABF9845A9E /* Pods-RxSwift Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift Example.release.xcconfig"; path = "Target Support Files/Pods-RxSwift Example/Pods-RxSwift Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +77,7 @@
 				0444935B2596E6EE0091EE88 /* Info.plist */,
 				04AEB7202599873600CA9795 /* LoginExampleViewController.swift */,
 				04AEB723259989AC00CA9795 /* LoginRxExampleViewController.swift */,
+				04F584D3259AE25500A614DD /* RxSwiftTest.playground */,
 			);
 			path = "RxSwift Example";
 			sourceTree = "<group>";
