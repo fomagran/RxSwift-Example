@@ -17,93 +17,45 @@ class LoginRxExampleViewController: UIViewController {
     @IBOutlet weak var passwordValid: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     
+    
+    let viewModel = LoginViewModel()
+    
     //3단계
     //초기값을 항상 지정해줘야함.
-    let emailValidSubject = BehaviorSubject<Bool>(value: false)
-    let passwordValidSubject = BehaviorSubject<Bool>(value: false)
-    let emailInputSubject = BehaviorSubject<String>(value: "")
-    let passwordInputSubject = BehaviorSubject<String>(value: "")
     
     var disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-//        bindUI()
-        
-        bindInputUI()
-        bindOutputUI()
+        bindUI()
+
     }
-    
-    private func bindInputUI() {
-        emailTextField.rx.text.orEmpty
-            .bind(to: emailInputSubject)
-            .disposed(by: disposeBag)
+ 
+    private func bindUI() {
         
-        emailInputSubject
-            .map(checkEmailValid)
-            .bind(to: emailValidSubject)
+        emailTextField.rx.text.orEmpty
+            .subscribe(onNext: {email  in self.viewModel.setEmailText(email)})
             .disposed(by: disposeBag)
         
         passwordTextField.rx.text.orEmpty
-            .bind(to: passwordInputSubject)
+            .subscribe(onNext: {password in self.viewModel.setPasswordText(password)})
             .disposed(by: disposeBag)
         
-        passwordInputSubject
-            .map(checkPasswordValid)
-            .bind(to: passwordValidSubject)
+        viewModel.emailValid
+            .bind(to: emailValid.rx.isHidden)
             .disposed(by: disposeBag)
         
-    }
-    
-    private func bindOutputUI() {
-        emailValidSubject.subscribe(onNext:{b in self.emailValid.isHidden = b})
-            .disposed(by: disposeBag)
-        passwordValidSubject.subscribe(onNext:{b in self.passwordValid.isHidden = b})
+        viewModel.passwordValid
+            .bind(to: passwordValid.rx.isHidden)
             .disposed(by: disposeBag)
         
-        Observable.combineLatest(emailValidSubject, passwordValidSubject,resultSelector: { $0 && $1 }).subscribe(onNext:{b in self.loginButton.isEnabled = b})
-            .disposed(by: disposeBag)
-    }
-    
-    private func bindUI() {
-     
-        //2단계
-        let emailInput = emailTextField.rx.text.orEmpty.asObservable()
-        let emailValid = emailInput.map(checkEmailValid)
-        let passwordInput = passwordTextField.rx.text.orEmpty.asObservable()
-        let passwordValid = passwordInput.map(checkPasswordValid)
-
-        emailValid.subscribe(onNext:{b in self.emailValid.isHidden = b})
-            .disposed(by: disposeBag)
-        passwordValid.subscribe(onNext:{b in self.passwordValid.isHidden = b})
-            .disposed(by: disposeBag)
-
-        Observable.combineLatest(emailValid, passwordValid,resultSelector: {$0 && $1 }).subscribe(onNext:{b in self.loginButton.isEnabled = b})
+        //방법 1.로그인버튼을 뷰모델에서 판단한다.
+        viewModel.loginValid
+            .bind(to:loginButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
-        //1단계
-        //emailTextField.rx.text.orEmpty
-        //    .map(checkEmailValid)
-        //    .subscribe{bool in self.emailValid.isHidden = bool}
-        //    .disposed(by: disposeBag)
-        //
-        //passwordTextField.rx.text.orEmpty
-        //    .map(checkPasswordValid)
-        //    .subscribe{bool in self.passwordValid.isHidden = bool}
-        //    .disposed(by: disposeBag)
-        //
-        //Observable.combineLatest( emailTextField.rx.text.orEmpty
-        //                            .map(checkEmailValid),   passwordTextField.rx.text.orEmpty
-        //                                .map(checkPasswordValid), resultSelector: { (t1, t2) in t1 && t2 } )
-        //    .subscribe(onNext: { b in self.loginButton.isEnabled = b } )
-        //    .disposed(by: disposeBag)
-      
-    }
-    
-    private func checkEmailValid(_ email:String) -> Bool {
-        return email.contains("@") && email.contains(".")
-    }
-    
-    private func checkPasswordValid(_ password:String) -> Bool {
-        return password.count > 5
+        //방법 2.컴바인레이티스트를 사용해서 뷰모델의 이메일,패스워드 밸리드를 판단해서 한번에 UI를 바꾼다.
+//        Observable.combineLatest(viewModel.emailValid, viewModel.passwordValid){$0 && $1}
+//            .bind(to: loginButton.rx.isEnabled)
+//            .disposed(by: disposeBag)
     }
 }
