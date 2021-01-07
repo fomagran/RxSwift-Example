@@ -74,6 +74,39 @@ let subscriber = observable.subscribe{print($0)}
  first는 맨 첫번째 결과만 방출
  
  */
+
+/*
+ subject
+ 
+ subject는 옵저버블이다.
+ 
+ 하지만 외부에서 값을 집어넣을수 있음.
+ 
+ AsyncSubject -> complete됐을 때 맨 마지막 결과를 방출
+ 
+ BehaviorSubject -> default값이 이미 있고 또한 이후 subscribe를 하면 이전의 값을 방출.
+ 
+ PublishSubject -> default값이 없고 subscribe 이후 값만 방출.
+ 
+ ReplaySubject -> subscribe를 하면 이전에 방출된 값을 모두 방출.
+ 
+ relay
+ 
+ relay는 서브젝트랑 동일하지만 UI처리용이다.
+ 
+ 고로 complete이나 error가 발생해도 흐름이 끊기지 않는다.
+ */
+
+/*
+ map과 flatMap
+ 
+ map의 다차원을 flat하게 만들어줌
+ 
+ ex) let a = [1,2]
+ a.map{[$0*2]} -> [2,4]
+   .map{[$0*2,$0*3]} -> [[4,8],[6,12]]
+    .flatMap{[$0 * 2 , $0 * 3 ]} -> [8,16,12,24,12,24,18,36] 이렇게 한번에 펴짐.
+ */
  
 
 
