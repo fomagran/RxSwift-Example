@@ -32,16 +32,26 @@ class LoginRxExampleViewController: UIViewController {
  
     private func bindUI() {
         
+        //orEmpty를 사용하면 optional값이 아닌 String으로 받아오게 된다
         emailTextField.rx.text.orEmpty
             .subscribe(onNext: {email  in self.viewModel.setEmailText(email)})
             .disposed(by: disposeBag)
         
-        passwordTextField.rx.text.orEmpty
-            .subscribe(onNext: {password in self.viewModel.setPasswordText(password)})
-            .disposed(by: disposeBag)
-        
         viewModel.emailValid
             .bind(to: emailValid.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        //만약 로직이 컨트롤러에 있다면 아래와 같이 사용
+        emailTextField.rx.text.orEmpty
+            .map(checkEmailValid)
+            //값이 바뀔때 ex) true true true true false면 false로 바뀔때만 값이 방출됨
+            .distinctUntilChanged()
+            .bind(to: emailValid.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        
+        passwordTextField.rx.text.orEmpty
+            .subscribe(onNext: {password in self.viewModel.setPasswordText(password)})
             .disposed(by: disposeBag)
         
         viewModel.passwordValid
@@ -58,4 +68,13 @@ class LoginRxExampleViewController: UIViewController {
 //            .bind(to: loginButton.rx.isEnabled)
 //            .disposed(by: disposeBag)
     }
+    
+    private func checkEmailValid(_ email:String) -> Bool {
+        return email.contains("@") && email.contains(".")
+    }
+
+    private func checkPasswordValid(_ password:String) -> Bool {
+        return password.count > 5
+    }
 }
+
