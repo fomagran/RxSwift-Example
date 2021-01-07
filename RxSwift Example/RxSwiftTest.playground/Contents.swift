@@ -18,6 +18,13 @@ let observable = Observable<Int>.create { (observer) -> Disposable in
 //just로 옵저버블 생성
 let justObservable = Observable.just(1)
 
+//from으로 옵저버블 생성
+
+let fromObservable = Observable.from([1,2,3])
+//1
+//2
+//3
+
 let subscriber = observable.subscribe{print($0)}
 
 
@@ -40,6 +47,33 @@ let subscriber = observable.subscribe{print($0)}
  
  */
 
+
+/*
+ combineLatest와 zip
+ 
+ combineLatest는 결과 두개를 이전 결과에 맞게 알아서 합쳐줌
+ 
+ ex) A      B       C    D
+       1       2    3          4
+       1A  1B  2B   3C   3D    4D
+ 
+ zip은 두개의 결과가 짝이 맞아야 합쳐져서 방출됨.
+ 
+ ex) A      B       C    D
+       1       2    3          4
+       1A      2B  3C          4D
+ */
+
+/*
+ map,filter,first
+ 
+ map은 결과를 알아서 바꿔서 방출
+ 
+ filter는 해당되는 결과만 방출
+ 
+ first는 맨 첫번째 결과만 방출
+ 
+ */
  
 
 
