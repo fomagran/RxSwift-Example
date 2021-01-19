@@ -8,22 +8,48 @@ enum MyError:Error {
 //옵저버블 생성
 let observable = Observable<Int>.create { (observer) -> Disposable in
     observer.onNext(1)
-    observer.onNext(2)
-    observer.onError(MyError.error)
-    observer.onNext(3)
     observer.onCompleted()
     return Disposables.create()
 }
 
-//just로 옵저버블 생성
-let justObservable = Observable.just(1)
+//of로 옵저버블 생성
+let ofObservable = Observable.of([1,2,3])
+//1,2,3
 
-//from으로 옵저버블 생성
-
-let fromObservable = Observable.from([1,2,3])
-//1
-//2
+//elementAt
+let elementAt = Observable.from([1,2,3]).elementAt(2).subscribe{print($0)}
 //3
+
+
+let observableInt = Observable.of(1, 2, 3)
+let observableString = Observable.of("A", "B", "C")
+let zip = Observable.zip(observableInt,observableString){"\($0)"+$1}.subscribe{print($0)}
+//next(1A)
+//next(2B)
+//next(3C)
+//completed
+
+
+observableInt
+    .flatMap { (x: Int) -> Observable<String> in
+        return observableString
+    }
+    .subscribe {
+        print("\($0)")
+}
+//next(A)
+//next(B)
+//next(A)
+//next(C)
+//next(B)
+//next(A)
+//next(C)
+//next(B)
+//next(C)
+//completed
+
+
+//2
 
 let subscriber = observable.subscribe{print($0)}
 

@@ -14,6 +14,7 @@
 		044493572596E6EE0091EE88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044493562596E6EE0091EE88 /* Assets.xcassets */; };
 		0444935A2596E6EE0091EE88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044493582596E6EE0091EE88 /* LaunchScreen.storyboard */; };
 		047D62F825A55ECE00697BF2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D62F725A55ECE00697BF2 /* LoginViewModel.swift */; };
+		04A79E8A25B6815900754FDD /* OperatorExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A79E8925B6815900754FDD /* OperatorExampleViewController.swift */; };
 		04AEB7212599873600CA9795 /* LoginExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEB7202599873600CA9795 /* LoginExampleViewController.swift */; };
 		04AEB724259989AC00CA9795 /* LoginRxExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEB723259989AC00CA9795 /* LoginRxExampleViewController.swift */; };
 		7596BB565F1B34F2194DE8BA /* Pods_RxSwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852A4F150E03BD629B3741AF /* Pods_RxSwift_Example.framework */; };
@@ -29,6 +30,7 @@
 		044493592596E6EE0091EE88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0444935B2596E6EE0091EE88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		047D62F725A55ECE00697BF2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		04A79E8925B6815900754FDD /* OperatorExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorExampleViewController.swift; sourceTree = "<group>"; };
 		04AEB7202599873600CA9795 /* LoginExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginExampleViewController.swift; sourceTree = "<group>"; };
 		04AEB723259989AC00CA9795 /* LoginRxExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRxExampleViewController.swift; sourceTree = "<group>"; };
 		04F584D3259AE25500A614DD /* RxSwiftTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxSwiftTest.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -80,6 +82,7 @@
 				0444935B2596E6EE0091EE88 /* Info.plist */,
 				04AEB7202599873600CA9795 /* LoginExampleViewController.swift */,
 				04AEB723259989AC00CA9795 /* LoginRxExampleViewController.swift */,
+				04A79E8925B6815900754FDD /* OperatorExampleViewController.swift */,
 				04F584D3259AE25500A614DD /* RxSwiftTest.playground */,
 			);
 			path = "RxSwift Example";
@@ -230,6 +233,7 @@
 				0444934E2596E6ED0091EE88 /* AppDelegate.swift in Sources */,
 				04AEB7212599873600CA9795 /* LoginExampleViewController.swift in Sources */,
 				044493502596E6ED0091EE88 /* SceneDelegate.swift in Sources */,
+				04A79E8A25B6815900754FDD /* OperatorExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
