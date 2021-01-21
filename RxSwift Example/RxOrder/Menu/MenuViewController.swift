@@ -18,14 +18,21 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var table: UITableView!
     
     let viewModel = MenuListViewModel()
-    
+    var disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         table.delegate = self
         table.dataSource = self
+    
         
-        itemCount.text = "\(viewModel.itemsCount)"
-        price.text = viewModel.totalPrice.currencyKR()
+        viewModel.totalPrice
+            .scan(0, accumulator: +)
+            .map{$0.currencyKR()}
+            .subscribe(onNext:{
+                self.price.text = $0
+            })
+            .disposed(by: disposeBag)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -34,7 +41,10 @@ class MenuViewController: UIViewController {
     
     
     @IBAction func handleOrderButton(_ sender: Any) {
-        performSegue(withIdentifier: "showOrderViewController", sender: nil)
+        
+        viewModel.totalPrice.onNext(100)
+     
+//        performSegue(withIdentifier: "showOrderViewController", sender: nil)
     }
 }
 
