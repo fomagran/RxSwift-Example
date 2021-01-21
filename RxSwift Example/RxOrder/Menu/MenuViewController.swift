@@ -23,14 +23,19 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
         table.delegate = self
         table.dataSource = self
-    
+        
+        
+        //bind를 사용하면 순환참조 걱정 x RxCocoa 사용해서 간단히 표시
+        viewModel.itemCount
+            .map{"\($0)"}
+            .bind(to: itemCount.rx.text)
+            .disposed(by: disposeBag)
+        
         
         viewModel.totalPrice
             .scan(0, accumulator: +)
             .map{$0.currencyKR()}
-            .subscribe(onNext:{
-                self.price.text = $0
-            })
+            .bind(to: price.rx.text)
             .disposed(by: disposeBag)
         
     }
@@ -42,7 +47,6 @@ class MenuViewController: UIViewController {
     
     @IBAction func handleOrderButton(_ sender: Any) {
         
-        viewModel.totalPrice.onNext(100)
      
 //        performSegue(withIdentifier: "showOrderViewController", sender: nil)
     }
@@ -54,7 +58,7 @@ extension MenuViewController:UITableViewDelegate {
 
 extension MenuViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.menus.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
