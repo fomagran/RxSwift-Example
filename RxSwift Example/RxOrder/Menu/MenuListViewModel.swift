@@ -10,7 +10,7 @@ import RxSwift
 
 class MenuListViewModel {
     
-    var menuObservable = PublishSubject<[Menu]>()
+    var menuObservable = BehaviorSubject<[Menu]>(value: [])
     
     lazy var totalPrice = menuObservable.map{
         $0.map{ $0.price * $0.count}.reduce(0,+)

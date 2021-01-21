@@ -22,12 +22,20 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         table.delegate = self
-        table.dataSource = self
         
+        //RxCocoa로 테이블뷰 처리하기
+        viewModel.menuObservable
+            .bind(to: table.rx.items(cellIdentifier: "MenuTableViewCell", cellType: MenuTableViewCell.self)) {index,item,cell in
+                cell.menu.text = item.name
+                cell.price.text = "\(item.price)"
+            }
+            .disposed(by: disposeBag)
+    
         
         //bind를 사용하면 순환참조 걱정 x RxCocoa 사용해서 간단히 표시
         viewModel.itemCount
             .map{"\($0)"}
+            .observeOn(MainScheduler.instance)
             .bind(to: itemCount.rx.text)
             .disposed(by: disposeBag)
         
@@ -35,6 +43,7 @@ class MenuViewController: UIViewController {
         viewModel.totalPrice
             .scan(0, accumulator: +)
             .map{$0.currencyKR()}
+            .observeOn(MainScheduler.instance)
             .bind(to: price.rx.text)
             .disposed(by: disposeBag)
         
@@ -55,22 +64,5 @@ class MenuViewController: UIViewController {
 extension MenuViewController:UITableViewDelegate {
     
 }
-
-extension MenuViewController:UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = table.dequeueReusableCell(withIdentifier: "MenuTableViewCell") as! MenuTableViewCell
-        let menu = viewModel.menus[indexPath.row]
-        cell.menu.text = menu.name
-        cell.price.text = "\(menu.price)"
-        
-        
-        return cell
-    }
-    
-    
-}
 
