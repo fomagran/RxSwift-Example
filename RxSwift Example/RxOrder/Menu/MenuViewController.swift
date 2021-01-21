@@ -28,6 +28,10 @@ class MenuViewController: UIViewController {
             .bind(to: table.rx.items(cellIdentifier: "MenuTableViewCell", cellType: MenuTableViewCell.self)) {index,item,cell in
                 cell.menu.text = item.name
                 cell.price.text = "\(item.price)"
+                cell.onChange = { increase in
+                    self.viewModel.changeCount(item: item, increase: increase)
+                   
+                }
             }
             .disposed(by: disposeBag)
     
@@ -54,10 +58,6 @@ class MenuViewController: UIViewController {
     
     
     @IBAction func handleOrderButton(_ sender: Any) {
-        
-        viewModel.menuObservable.onNext([Menu(name: "fomagrna", price: 100, count: 3),
-                                        Menu(name: "fomagrna", price: 100, count: 3),
-                                        Menu(name: "fomagrna", price: 100, count: 3)])
         
      
 //        performSegue(withIdentifier: "showOrderViewController", sender: nil)

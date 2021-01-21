@@ -13,21 +13,19 @@ class MenuTableViewCell: UITableViewCell {
     @IBOutlet weak var menu: UILabel!
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
+    
+    var onChange:((Int) -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
     @IBAction func handlePlusButton(_ sender: Any) {
+        onChange?(+1)
         
     }
     @IBAction func handleMinusButton(_ sender: Any) {
-        
+        onChange?(-1)
     }
 }
