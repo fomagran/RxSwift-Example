@@ -436,12 +436,21 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aU4-iJ-9oq">
+                                        <rect key="frame" x="18" y="8" width="36" height="30"/>
+                                        <state key="normal" title="Clear"/>
+                                        <connections>
+                                            <action selector="handleClearButton:" destination="pFJ-Rg-nMR" eventType="touchUpInside" id="FcC-fL-x1L"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="2og-TY-Dfh"/>
                                     <constraint firstAttribute="trailing" secondItem="vuD-3j-nuh" secondAttribute="trailing" constant="36" id="8CE-pG-9OT"/>
                                     <constraint firstItem="5mh-LZ-ho2" firstAttribute="trailing" secondItem="vuD-3j-nuh" secondAttribute="trailing" id="CjQ-u8-SRx"/>
+                                    <constraint firstItem="aU4-iJ-9oq" firstAttribute="leading" secondItem="kFl-B7-HEs" secondAttribute="leading" constant="18" id="SQm-IJ-dwF"/>
+                                    <constraint firstItem="aU4-iJ-9oq" firstAttribute="top" secondItem="kFl-B7-HEs" secondAttribute="top" constant="8" id="Yfm-Bo-J72"/>
                                     <constraint firstItem="vuD-3j-nuh" firstAttribute="top" secondItem="kFl-B7-HEs" secondAttribute="top" constant="22" id="apQ-IS-46p"/>
                                     <constraint firstItem="5mh-LZ-ho2" firstAttribute="centerY" secondItem="kFl-B7-HEs" secondAttribute="centerY" id="uQl-yd-zF9"/>
                                 </constraints>
@@ -476,6 +485,7 @@
                     <navigationItem key="navigationItem" id="5vH-78-K72"/>
                     <connections>
                         <outlet property="bottomView" destination="kFl-B7-HEs" id="Hr3-Kp-uhb"/>
+                        <outlet property="clearButton" destination="aU4-iJ-9oq" id="M73-nI-2Bq"/>
                         <outlet property="itemCount" destination="vuD-3j-nuh" id="RgE-69-RRZ"/>
                         <outlet property="orderButton" destination="anW-W4-uTJ" id="c4M-iH-bb6"/>
                         <outlet property="price" destination="5mh-LZ-ho2" id="XEz-Th-XUr"/>

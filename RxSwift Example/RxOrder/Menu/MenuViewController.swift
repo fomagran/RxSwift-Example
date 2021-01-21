@@ -11,6 +11,7 @@ import RxCocoa
 
 class MenuViewController: UIViewController {
 
+    @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var orderButton: UIButton!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var itemCount: UILabel!
@@ -21,7 +22,6 @@ class MenuViewController: UIViewController {
     var disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        table.delegate = self
         
         //RxCocoa로 테이블뷰 처리하기
         viewModel.menuObservable
@@ -41,7 +41,6 @@ class MenuViewController: UIViewController {
         
         
         viewModel.totalPrice
-            .scan(0, accumulator: +)
             .map{$0.currencyKR()}
             .observeOn(MainScheduler.instance)
             .bind(to: price.rx.text)
@@ -56,13 +55,15 @@ class MenuViewController: UIViewController {
     
     @IBAction func handleOrderButton(_ sender: Any) {
         
+        viewModel.menuObservable.onNext([Menu(name: "fomagrna", price: 100, count: 3),
+                                        Menu(name: "fomagrna", price: 100, count: 3),
+                                        Menu(name: "fomagrna", price: 100, count: 3)])
+        
      
 //        performSegue(withIdentifier: "showOrderViewController", sender: nil)
     }
+    @IBAction func handleClearButton(_ sender: Any) {
+        
+        viewModel.clearAllItems()
+    }
 }
-
-extension MenuViewController:UITableViewDelegate {
-    
-}
-    
-
