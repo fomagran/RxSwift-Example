@@ -26,7 +26,6 @@ class RxJsonApiTableViewCell: UITableViewCell {
             .bind(to: photo.rx.image)
             .disposed(by: disposeBag)
         
-        photo.image = nil
         label.text = data.name
     }
     
