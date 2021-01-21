@@ -17,4 +17,7 @@ let menus:[Menu] = [
     Menu(name:"튀김5",price: 100,count:0)
 ]
     
+    let itemsCount = 0
+    let totalPrice = 0
+    
 }

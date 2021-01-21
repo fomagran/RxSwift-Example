@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class MenuViewController: UIViewController {
 
@@ -21,6 +23,18 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
         table.delegate = self
         table.dataSource = self
+        
+        itemCount.text = "\(viewModel.itemsCount)"
+        price.text = viewModel.totalPrice.currencyKR()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("")
+    }
+    
+    
+    @IBAction func handleOrderButton(_ sender: Any) {
+        performSegue(withIdentifier: "showOrderViewController", sender: nil)
     }
 }
 

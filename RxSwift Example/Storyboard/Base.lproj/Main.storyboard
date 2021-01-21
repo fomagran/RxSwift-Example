@@ -436,41 +436,41 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anW-W4-uTJ">
-                                        <rect key="frame" x="0.0" y="120" width="414" height="30"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="LCJ-Yc-NdU"/>
-                                        </constraints>
-                                        <state key="normal" title="order"/>
-                                        <connections>
-                                            <segue destination="gM2-23-mcd" kind="show" id="Yc8-b2-xEK"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="2og-TY-Dfh"/>
                                     <constraint firstAttribute="trailing" secondItem="vuD-3j-nuh" secondAttribute="trailing" constant="36" id="8CE-pG-9OT"/>
                                     <constraint firstItem="5mh-LZ-ho2" firstAttribute="trailing" secondItem="vuD-3j-nuh" secondAttribute="trailing" id="CjQ-u8-SRx"/>
-                                    <constraint firstAttribute="trailing" secondItem="anW-W4-uTJ" secondAttribute="trailing" id="Eck-PW-cmU"/>
                                     <constraint firstItem="vuD-3j-nuh" firstAttribute="top" secondItem="kFl-B7-HEs" secondAttribute="top" constant="22" id="apQ-IS-46p"/>
-                                    <constraint firstItem="anW-W4-uTJ" firstAttribute="leading" secondItem="kFl-B7-HEs" secondAttribute="leading" id="cf9-wO-xNd"/>
                                     <constraint firstItem="5mh-LZ-ho2" firstAttribute="centerY" secondItem="kFl-B7-HEs" secondAttribute="centerY" id="uQl-yd-zF9"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anW-W4-uTJ">
+                                <rect key="frame" x="0.0" y="836" width="414" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="LCJ-Yc-NdU"/>
+                                </constraints>
+                                <state key="normal" title="order"/>
+                                <connections>
+                                    <action selector="handleOrderButton:" destination="pFJ-Rg-nMR" eventType="touchUpInside" id="tRl-4Y-Hzx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SHX-H9-vna"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kFl-B7-HEs" firstAttribute="top" secondItem="dRO-Ut-icG" secondAttribute="bottom" id="9mB-3a-PcM"/>
+                            <constraint firstAttribute="bottom" secondItem="anW-W4-uTJ" secondAttribute="bottom" id="D5w-jE-zQQ"/>
                             <constraint firstItem="SHX-H9-vna" firstAttribute="trailing" secondItem="kFl-B7-HEs" secondAttribute="trailing" id="Iak-2r-YxZ"/>
                             <constraint firstItem="kFl-B7-HEs" firstAttribute="leading" secondItem="SHX-H9-vna" secondAttribute="leading" id="KIK-fc-pfS"/>
                             <constraint firstItem="dRO-Ut-icG" firstAttribute="trailing" secondItem="SHX-H9-vna" secondAttribute="trailing" id="Kkd-Bv-eXY"/>
                             <constraint firstItem="dRO-Ut-icG" firstAttribute="leading" secondItem="SHX-H9-vna" secondAttribute="leading" id="NSi-bY-bcb"/>
                             <constraint firstItem="dRO-Ut-icG" firstAttribute="top" secondItem="SHX-H9-vna" secondAttribute="top" id="cFW-7K-QkG"/>
-                            <constraint firstItem="SHX-H9-vna" firstAttribute="bottom" secondItem="anW-W4-uTJ" secondAttribute="bottom" id="jdH-Hy-BYs"/>
                             <constraint firstItem="SHX-H9-vna" firstAttribute="bottom" secondItem="kFl-B7-HEs" secondAttribute="bottom" id="oLv-ss-wMn"/>
+                            <constraint firstItem="anW-W4-uTJ" firstAttribute="leading" secondItem="5xV-Eg-aoa" secondAttribute="leading" id="uKi-Ur-ryF"/>
+                            <constraint firstAttribute="trailing" secondItem="anW-W4-uTJ" secondAttribute="trailing" id="uxO-sE-eeX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5vH-78-K72"/>
@@ -480,6 +480,7 @@
                         <outlet property="orderButton" destination="anW-W4-uTJ" id="c4M-iH-bb6"/>
                         <outlet property="price" destination="5mh-LZ-ho2" id="XEz-Th-XUr"/>
                         <outlet property="table" destination="dRO-Ut-icG" id="eSn-gu-Kc4"/>
+                        <segue destination="gM2-23-mcd" kind="show" identifier="showOrderViewController" id="hfO-Q2-EsP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dN9-Jh-1VU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
