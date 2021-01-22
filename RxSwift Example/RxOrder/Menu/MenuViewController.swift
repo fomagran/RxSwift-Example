@@ -28,19 +28,18 @@ class MenuViewController: UIViewController {
             .bind(to: table.rx.items(cellIdentifier: "MenuTableViewCell", cellType: MenuTableViewCell.self)) {index,item,cell in
                 cell.menu.text = item.name
                 cell.price.text = "\(item.price)"
-                cell.onChange = { increase in
-                    self.viewModel.changeCount(item: item, increase: increase)
+                cell.onChange = { [weak self] increase in
+                    self?.viewModel.changeCount(item: item, increase: increase)
                    
                 }
             }
             .disposed(by: disposeBag)
-    
         
-        //bind를 사용하면 순환참조 걱정 x RxCocoa 사용해서 간단히 표시
+        //UI를 에러났을때 끊어지지 않게 하는것 drive를 사용하면 자동으로 메인쓰레드에서 돌아가게 된다.
         viewModel.itemCount
             .map{"\($0)"}
-            .observeOn(MainScheduler.instance)
-            .bind(to: itemCount.rx.text)
+            .asDriver(onErrorJustReturn: "")
+            .drive(itemCount.rx.text)
             .disposed(by: disposeBag)
         
         
@@ -63,7 +62,6 @@ class MenuViewController: UIViewController {
 //        performSegue(withIdentifier: "showOrderViewController", sender: nil)
     }
     @IBAction func handleClearButton(_ sender: Any) {
-        
         viewModel.clearAllItems()
     }
 }
