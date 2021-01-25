@@ -31,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0436FC1C25BE590E003ACF73 /* Subject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Subject.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		0444934A2596E6ED0091EE88 /* RxSwift Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxSwift Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0444934D2596E6ED0091EE88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0444934F2596E6ED0091EE88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +102,7 @@
 				044493562596E6EE0091EE88 /* Assets.xcassets */,
 				0444935B2596E6EE0091EE88 /* Info.plist */,
 				04F584D3259AE25500A614DD /* RxSwiftTest.playground */,
+				0436FC1C25BE590E003ACF73 /* Subject.playground */,
 			);
 			path = "RxSwift Example";
 			sourceTree = "<group>";
