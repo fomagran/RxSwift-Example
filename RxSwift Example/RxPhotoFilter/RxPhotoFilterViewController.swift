@@ -31,13 +31,18 @@ class RxPhotoFilterViewController: UIViewController {
         .disposed(by: disposeBag)
     }
     
+
+    
     @IBAction func applyFilter() {
         guard let sourceImage = self.photoImageView.image else {return}
-        FilterService().applyFilter(to: sourceImage) { (filteredImage) in
-            DispatchQueue.main.async {
-                self.photoImageView.image = filteredImage
-            }
-        }
+        FilterService().rxApplyFilter(to: sourceImage)
+            .subscribe(onNext: { (filterImage) in
+                DispatchQueue.main.async {
+                    self.photoImageView.image = filterImage
+                }
+            })
+            .disposed(by: disposeBag)
+
     }
     
     private func updateUI(with image:UIImage) {
