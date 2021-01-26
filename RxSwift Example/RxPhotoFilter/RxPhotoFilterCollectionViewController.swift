@@ -7,9 +7,15 @@
 
 import UIKit
 import Photos
+import RxSwift
 
 
 class RxPhotoFilterCollectionViewController: UICollectionViewController {
+    
+    private let selectedPhotoSubject = PublishSubject<UIImage>()
+    var selectedPhoto:Observable<UIImage> {
+        return selectedPhotoSubject.asObservable()
+    }
 
     private var images = [PHAsset]()
     
@@ -69,6 +75,21 @@ class RxPhotoFilterCollectionViewController: UICollectionViewController {
     }
 
     // MARK: UICollectionViewDelegate
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedAsset = self.images[indexPath.row]
+        PHImageManager.default().requestImage(for: selectedAsset, targetSize: CGSize(width: 30, height: 30), contentMode: .aspectFill, options: nil) { [weak self] (image, info) in
+            guard let info = info else { return }
+            
+            let isDegradedImage = info["PHImageResultIsDegradedKey"] as! Bool
+            if !isDegradedImage {
+                if let image = image {
+                    self?.selectedPhotoSubject.onNext(image)
+                    self?.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
+    }
 }
 
 
