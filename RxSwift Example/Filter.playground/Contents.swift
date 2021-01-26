@@ -5,19 +5,14 @@ let strikes = PublishSubject<String>()
 
 let disposeBag = DisposeBag()
 
-//ignoreElements는 completed 됐을때 방출한다.
-strikes
-    .ignoreElements()
-    .subscribe{print("Called")
-    }
+//element index를 정해주면
+strikes.elementAt(2)
+    .subscribe(onNext:{_ in print("You are out!")})
     .disposed(by: disposeBag)
 
-strikes.onNext("A")
-strikes.onNext("B")
-//아무것도 프린트 안됨.
-
-strikes.onCompleted()
-//Called
-
+strikes.onNext("X")
+strikes.onNext("X")
+//정해준 index의 element가 방출된다.
+strikes.onNext("X")
 
 
