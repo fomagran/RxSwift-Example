@@ -570,6 +570,9 @@
                                 <state key="normal" title="Filter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="applyFilter" destination="oLk-m0-qyu" eventType="touchUpInside" id="RHd-5f-hJe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VyK-8v-GoH"/>
@@ -591,6 +594,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="filterButton" destination="nUr-3u-7Kq" id="iRT-Q3-Rdy"/>
                         <outlet property="photoImageView" destination="qJ6-Rf-1YE" id="rzx-Yn-aXn"/>
                     </connections>
                 </viewController>

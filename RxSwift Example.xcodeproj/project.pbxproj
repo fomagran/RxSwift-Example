@@ -16,6 +16,7 @@
 		044493552596E6ED0091EE88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044493532596E6ED0091EE88 /* Main.storyboard */; };
 		044493572596E6EE0091EE88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044493562596E6EE0091EE88 /* Assets.xcassets */; };
 		0444935A2596E6EE0091EE88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044493582596E6EE0091EE88 /* LaunchScreen.storyboard */; };
+		047CC63125BFAE4B006EF82E /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CC63025BFAE4B006EF82E /* FilterService.swift */; };
 		047D62F825A55ECE00697BF2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D62F725A55ECE00697BF2 /* LoginViewModel.swift */; };
 		04AEB7212599873600CA9795 /* LoginExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEB7202599873600CA9795 /* LoginExampleViewController.swift */; };
 		04AEB724259989AC00CA9795 /* LoginRxExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEB723259989AC00CA9795 /* LoginRxExampleViewController.swift */; };
@@ -46,6 +47,7 @@
 		044493562596E6EE0091EE88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		044493592596E6EE0091EE88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0444935B2596E6EE0091EE88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		047CC63025BFAE4B006EF82E /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
 		047D62F725A55ECE00697BF2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		04AEB7202599873600CA9795 /* LoginExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginExampleViewController.swift; sourceTree = "<group>"; };
 		04AEB723259989AC00CA9795 /* LoginRxExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRxExampleViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				0436FC2025BE5F15003ACF73 /* RxPhotoFilterViewController.swift */,
 				0436FC2325BE5F28003ACF73 /* RxPhotoFilterCollectionViewController.swift */,
 				0436FCC025BE6D0F003ACF73 /* PhotoCollectionViewCell.swift */,
+				047CC63025BFAE4B006EF82E /* FilterService.swift */,
 			);
 			path = RxPhotoFilter;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				04E0B81125BA76FF00559DF5 /* MenuItem.swift in Sources */,
 				0436FCC125BE6D0F003ACF73 /* PhotoCollectionViewCell.swift in Sources */,
 				04B78CEA25B7CE1F006AE6E2 /* RxJsonApiTableViewCell.swift in Sources */,
+				047CC63125BFAE4B006EF82E /* FilterService.swift in Sources */,
 				044493522596E6ED0091EE88 /* DisposeExampleViewController.swift in Sources */,
 				04D6E23325B91B60000538C2 /* Menu.swift in Sources */,
 				0436FC2425BE5F28003ACF73 /* RxPhotoFilterCollectionViewController.swift in Sources */,

@@ -78,7 +78,7 @@ class RxPhotoFilterCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedAsset = self.images[indexPath.row]
-        PHImageManager.default().requestImage(for: selectedAsset, targetSize: CGSize(width: 30, height: 30), contentMode: .aspectFill, options: nil) { [weak self] (image, info) in
+        PHImageManager.default().requestImage(for: selectedAsset, targetSize: CGSize(width: 30, height: 30), contentMode: .aspectFit, options: nil) { [weak self] (image, info) in
             guard let info = info else { return }
             
             let isDegradedImage = info["PHImageResultIsDegradedKey"] as! Bool
