@@ -20,6 +20,7 @@
 		047D62F825A55ECE00697BF2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D62F725A55ECE00697BF2 /* LoginViewModel.swift */; };
 		04A66D4A25C0F99000A3EB92 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A66D4925C0F99000A3EB92 /* ListViewController.swift */; };
 		04A66D4D25C0FB1400A3EB92 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A66D4C25C0FB1400A3EB92 /* ListTableViewCell.swift */; };
+		04A66D5025C0FCD800A3EB92 /* AddListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A66D4F25C0FCD800A3EB92 /* AddListViewController.swift */; };
 		04AEB7212599873600CA9795 /* LoginExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEB7202599873600CA9795 /* LoginExampleViewController.swift */; };
 		04AEB724259989AC00CA9795 /* LoginRxExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEB723259989AC00CA9795 /* LoginRxExampleViewController.swift */; };
 		04B78CE725B7CE06006AE6E2 /* RxJsonApiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B78CE625B7CE06006AE6E2 /* RxJsonApiTableViewController.swift */; };
@@ -54,6 +55,7 @@
 		047D62F725A55ECE00697BF2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		04A66D4925C0F99000A3EB92 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		04A66D4C25C0FB1400A3EB92 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		04A66D4F25C0FCD800A3EB92 /* AddListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListViewController.swift; sourceTree = "<group>"; };
 		04AEB7202599873600CA9795 /* LoginExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginExampleViewController.swift; sourceTree = "<group>"; };
 		04AEB723259989AC00CA9795 /* LoginRxExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRxExampleViewController.swift; sourceTree = "<group>"; };
 		04B78CE625B7CE06006AE6E2 /* RxJsonApiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxJsonApiTableViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				04A66D4925C0F99000A3EB92 /* ListViewController.swift */,
 				04A66D4C25C0FB1400A3EB92 /* ListTableViewCell.swift */,
+				04A66D4F25C0FCD800A3EB92 /* AddListViewController.swift */,
 			);
 			path = RxToDoList;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				04D6E23025B916A4000538C2 /* MenuTableViewCell.swift in Sources */,
 				04B78CED25B7CEE4006AE6E2 /* Person.swift in Sources */,
 				04A66D4A25C0F99000A3EB92 /* ListViewController.swift in Sources */,
+				04A66D5025C0FCD800A3EB92 /* AddListViewController.swift in Sources */,
 				04D6E23925B91FA5000538C2 /* Extentsion.swift in Sources */,
 				04D6E22A25B914BE000538C2 /* OrderViewController.swift in Sources */,
 				0436FC2125BE5F15003ACF73 /* RxPhotoFilterViewController.swift in Sources */,
