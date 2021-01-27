@@ -704,6 +704,9 @@
                                     <segment title="Medium"/>
                                     <segment title="Low"/>
                                 </segments>
+                                <connections>
+                                    <action selector="priorityValueChangedWithSegmentedControl:" destination="hLr-FM-bas" eventType="valueChanged" id="20E-3C-xoz"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wRJ-qv-Aff">
                                 <rect key="frame" x="0.0" y="191" width="414" height="671"/>
