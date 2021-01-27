@@ -779,9 +779,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="voK-m1-fcG">
-                                <rect key="frame" x="69.5" y="66" width="275" height="32"/>
+                                <rect key="frame" x="104" y="66" width="206" height="32"/>
                                 <segments>
-                                    <segment title="All"/>
                                     <segment title="High"/>
                                     <segment title="Medium"/>
                                     <segment title="Low"/>

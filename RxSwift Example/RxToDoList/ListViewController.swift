@@ -41,6 +41,12 @@ class ListViewController: UIViewController {
             
     }
     
+    private func updateTableView()  {
+        DispatchQueue.main.async {
+            self.table.reloadData()
+        }
+    }
+    
     //priority로 필터하기
     private func filterTasks(by priority:Priority?) {
         if priority == nil {
@@ -53,6 +59,8 @@ class ListViewController: UIViewController {
                 })
                 .disposed(by: disposeBag)
         }
+        updateTableView()
+
     }
     
     @IBAction func add(_ sender: Any) {
@@ -70,11 +78,12 @@ class ListViewController: UIViewController {
 
 extension ListViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tasks.value.count
+        filteredTasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "ListTableViewCell") as! ListTableViewCell
+        cell.label.text = filteredTasks[indexPath.row].title
         return cell
     }
 }
