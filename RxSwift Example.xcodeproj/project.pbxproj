@@ -22,6 +22,8 @@
 		04A66D4D25C0FB1400A3EB92 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A66D4C25C0FB1400A3EB92 /* ListTableViewCell.swift */; };
 		04A66D5025C0FCD800A3EB92 /* AddListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A66D4F25C0FCD800A3EB92 /* AddListViewController.swift */; };
 		04A66D5325C0FDEE00A3EB92 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A66D5225C0FDEE00A3EB92 /* Task.swift */; };
+		04A66D5925C1110500A3EB92 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A66D5825C1110500A3EB92 /* Constants.swift */; };
+		04A66D5D25C1131400A3EB92 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A66D5C25C1131400A3EB92 /* NewsTableViewController.swift */; };
 		04AEB7212599873600CA9795 /* LoginExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEB7202599873600CA9795 /* LoginExampleViewController.swift */; };
 		04AEB724259989AC00CA9795 /* LoginRxExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEB723259989AC00CA9795 /* LoginRxExampleViewController.swift */; };
 		04B78CE725B7CE06006AE6E2 /* RxJsonApiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B78CE625B7CE06006AE6E2 /* RxJsonApiTableViewController.swift */; };
@@ -59,6 +61,8 @@
 		04A66D4F25C0FCD800A3EB92 /* AddListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListViewController.swift; sourceTree = "<group>"; };
 		04A66D5225C0FDEE00A3EB92 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		04A66D5525C10B3300A3EB92 /* Transform.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Transform.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		04A66D5825C1110500A3EB92 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		04A66D5C25C1131400A3EB92 /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		04AEB7202599873600CA9795 /* LoginExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginExampleViewController.swift; sourceTree = "<group>"; };
 		04AEB723259989AC00CA9795 /* LoginRxExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRxExampleViewController.swift; sourceTree = "<group>"; };
 		04B78CE625B7CE06006AE6E2 /* RxJsonApiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxJsonApiTableViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 		0444934C2596E6ED0091EE88 /* RxSwift Example */ = {
 			isa = PBXGroup;
 			children = (
+				04A66D5725C110B900A3EB92 /* RxNews */,
 				04A66D4725C0F90700A3EB92 /* RxToDoList */,
 				0436FC1E25BE5E46003ACF73 /* RxPhotoFilter */,
 				04D6E22525B911BA000538C2 /* RxOrder */,
@@ -149,6 +154,15 @@
 				04A66D5225C0FDEE00A3EB92 /* Task.swift */,
 			);
 			path = RxToDoList;
+			sourceTree = "<group>";
+		};
+		04A66D5725C110B900A3EB92 /* RxNews */ = {
+			isa = PBXGroup;
+			children = (
+				04A66D5825C1110500A3EB92 /* Constants.swift */,
+				04A66D5C25C1131400A3EB92 /* NewsTableViewController.swift */,
+			);
+			path = RxNews;
 			sourceTree = "<group>";
 		};
 		04B78CDA25B7CC27006AE6E2 /* Login */ = {
@@ -366,6 +380,8 @@
 				047CC63125BFAE4B006EF82E /* FilterService.swift in Sources */,
 				044493522596E6ED0091EE88 /* DisposeExampleViewController.swift in Sources */,
 				04D6E23325B91B60000538C2 /* Menu.swift in Sources */,
+				04A66D5925C1110500A3EB92 /* Constants.swift in Sources */,
+				04A66D5D25C1131400A3EB92 /* NewsTableViewController.swift in Sources */,
 				0436FC2425BE5F28003ACF73 /* RxPhotoFilterCollectionViewController.swift in Sources */,
 				04B78CE725B7CE06006AE6E2 /* RxJsonApiTableViewController.swift in Sources */,
 				04AEB724259989AC00CA9795 /* LoginRxExampleViewController.swift in Sources */,
