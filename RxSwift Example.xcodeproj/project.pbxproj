@@ -16,6 +16,8 @@
 		044493552596E6ED0091EE88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044493532596E6ED0091EE88 /* Main.storyboard */; };
 		044493572596E6EE0091EE88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044493562596E6EE0091EE88 /* Assets.xcassets */; };
 		0444935A2596E6EE0091EE88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044493582596E6EE0091EE88 /* LaunchScreen.storyboard */; };
+		047104C525C25680001D1BAD /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047104C425C25680001D1BAD /* Article.swift */; };
+		047104C925C25B01001D1BAD /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047104C825C25B01001D1BAD /* ArticleTableViewCell.swift */; };
 		047CC63125BFAE4B006EF82E /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CC63025BFAE4B006EF82E /* FilterService.swift */; };
 		047D62F825A55ECE00697BF2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D62F725A55ECE00697BF2 /* LoginViewModel.swift */; };
 		04A66D4A25C0F99000A3EB92 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A66D4925C0F99000A3EB92 /* ListViewController.swift */; };
@@ -53,6 +55,8 @@
 		044493562596E6EE0091EE88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		044493592596E6EE0091EE88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0444935B2596E6EE0091EE88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		047104C425C25680001D1BAD /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		047104C825C25B01001D1BAD /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		047CC63025BFAE4B006EF82E /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
 		047CC63325BFBC1A006EF82E /* Filter.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Filter.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		047D62F725A55ECE00697BF2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -145,6 +149,22 @@
 			path = "RxSwift Example";
 			sourceTree = "<group>";
 		};
+		047104C325C25675001D1BAD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				047104C425C25680001D1BAD /* Article.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		047104C725C25AEF001D1BAD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				047104C825C25B01001D1BAD /* ArticleTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		04A66D4725C0F90700A3EB92 /* RxToDoList */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +179,8 @@
 		04A66D5725C110B900A3EB92 /* RxNews */ = {
 			isa = PBXGroup;
 			children = (
+				047104C725C25AEF001D1BAD /* Cell */,
+				047104C325C25675001D1BAD /* Model */,
 				04A66D5825C1110500A3EB92 /* Constants.swift */,
 				04A66D5C25C1131400A3EB92 /* NewsTableViewController.swift */,
 			);
@@ -373,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047104C525C25680001D1BAD /* Article.swift in Sources */,
 				04E0B81125BA76FF00559DF5 /* MenuItem.swift in Sources */,
 				0436FCC125BE6D0F003ACF73 /* PhotoCollectionViewCell.swift in Sources */,
 				04A66D4D25C0FB1400A3EB92 /* ListTableViewCell.swift in Sources */,
@@ -389,6 +412,7 @@
 				0444934E2596E6ED0091EE88 /* AppDelegate.swift in Sources */,
 				04A66D5325C0FDEE00A3EB92 /* Task.swift in Sources */,
 				04D6E22725B911D3000538C2 /* APIService.swift in Sources */,
+				047104C925C25B01001D1BAD /* ArticleTableViewCell.swift in Sources */,
 				04D6E22D25B9168A000538C2 /* MenuViewController.swift in Sources */,
 				04AEB7212599873600CA9795 /* LoginExampleViewController.swift in Sources */,
 				04D6E23025B916A4000538C2 /* MenuTableViewCell.swift in Sources */,
