@@ -18,7 +18,7 @@ extension ArticlesList {
     }()
 }
 
-//모델을 만들때 타입 뒤에 ?붙여줘야 데이터가 표시된다.
+//뉴스 중에 타이틀만 있고 description이 없는 경우가 있다 그러므로 옵셔널로 선언해주어야한다.
 struct Article:Decodable{
     let title:String
     let description:String?
