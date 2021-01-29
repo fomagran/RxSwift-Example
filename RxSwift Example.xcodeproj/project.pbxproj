@@ -18,7 +18,6 @@
 		0444935A2596E6EE0091EE88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044493582596E6EE0091EE88 /* LaunchScreen.storyboard */; };
 		047104C525C25680001D1BAD /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047104C425C25680001D1BAD /* Article.swift */; };
 		047104C925C25B01001D1BAD /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047104C825C25B01001D1BAD /* ArticleTableViewCell.swift */; };
-		047104CD25C264A8001D1BAD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047104CC25C264A8001D1BAD /* Extension.swift */; };
 		047CC63125BFAE4B006EF82E /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CC63025BFAE4B006EF82E /* FilterService.swift */; };
 		047D62F825A55ECE00697BF2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D62F725A55ECE00697BF2 /* LoginViewModel.swift */; };
 		04A66D4A25C0F99000A3EB92 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A66D4925C0F99000A3EB92 /* ListViewController.swift */; };
@@ -35,6 +34,7 @@
 		04B934A925C3AC3900EAC5BE /* WeatherConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B934A825C3AC3900EAC5BE /* WeatherConstants.swift */; };
 		04B934AD25C3C54900EAC5BE /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B934AC25C3C54900EAC5BE /* WeatherViewController.swift */; };
 		04B934B125C3C6D400EAC5BE /* WeatherResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B934B025C3C6D400EAC5BE /* WeatherResult.swift */; };
+		04B934B425C3C78F00EAC5BE /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B934B325C3C78F00EAC5BE /* URLRequest+Extensions.swift */; };
 		04D6E22725B911D3000538C2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6E22625B911D3000538C2 /* APIService.swift */; };
 		04D6E22A25B914BE000538C2 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6E22925B914BE000538C2 /* OrderViewController.swift */; };
 		04D6E22D25B9168A000538C2 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6E22C25B9168A000538C2 /* MenuViewController.swift */; };
@@ -61,7 +61,6 @@
 		0444935B2596E6EE0091EE88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		047104C425C25680001D1BAD /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		047104C825C25B01001D1BAD /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
-		047104CC25C264A8001D1BAD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		047CC63025BFAE4B006EF82E /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
 		047CC63325BFBC1A006EF82E /* Filter.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Filter.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		047D62F725A55ECE00697BF2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		04B934A825C3AC3900EAC5BE /* WeatherConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherConstants.swift; sourceTree = "<group>"; };
 		04B934AC25C3C54900EAC5BE /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		04B934B025C3C6D400EAC5BE /* WeatherResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResult.swift; sourceTree = "<group>"; };
+		04B934B325C3C78F00EAC5BE /* URLRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extensions.swift"; sourceTree = "<group>"; };
 		04D6E22625B911D3000538C2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		04D6E22925B914BE000538C2 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		04D6E22C25B9168A000538C2 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +149,7 @@
 				04B78CDE25B7CC85006AE6E2 /* Delegate */,
 				04B78CDC25B7CC5E006AE6E2 /* Dispose */,
 				04B78CDA25B7CC27006AE6E2 /* Login */,
+				04B934B325C3C78F00EAC5BE /* URLRequest+Extensions.swift */,
 				044493562596E6EE0091EE88 /* Assets.xcassets */,
 				0444935B2596E6EE0091EE88 /* Info.plist */,
 				04F584D3259AE25500A614DD /* RxSwiftTest.playground */,
@@ -194,7 +195,6 @@
 				047104C325C25675001D1BAD /* Model */,
 				04A66D5825C1110500A3EB92 /* Constants.swift */,
 				04A66D5C25C1131400A3EB92 /* NewsTableViewController.swift */,
-				047104CC25C264A8001D1BAD /* Extension.swift */,
 			);
 			path = RxNews;
 			sourceTree = "<group>";
@@ -434,7 +434,6 @@
 				04AEB724259989AC00CA9795 /* LoginRxExampleViewController.swift in Sources */,
 				047D62F825A55ECE00697BF2 /* LoginViewModel.swift in Sources */,
 				0444934E2596E6ED0091EE88 /* AppDelegate.swift in Sources */,
-				047104CD25C264A8001D1BAD /* Extension.swift in Sources */,
 				04A66D5325C0FDEE00A3EB92 /* Task.swift in Sources */,
 				04D6E22725B911D3000538C2 /* APIService.swift in Sources */,
 				047104C925C25B01001D1BAD /* ArticleTableViewCell.swift in Sources */,
@@ -444,6 +443,7 @@
 				04B78CED25B7CEE4006AE6E2 /* Person.swift in Sources */,
 				04A66D4A25C0F99000A3EB92 /* ListViewController.swift in Sources */,
 				04A66D5025C0FCD800A3EB92 /* AddListViewController.swift in Sources */,
+				04B934B425C3C78F00EAC5BE /* URLRequest+Extensions.swift in Sources */,
 				04D6E23925B91FA5000538C2 /* Extentsion.swift in Sources */,
 				04D6E22A25B914BE000538C2 /* OrderViewController.swift in Sources */,
 				0436FC2125BE5F15003ACF73 /* RxPhotoFilterViewController.swift in Sources */,

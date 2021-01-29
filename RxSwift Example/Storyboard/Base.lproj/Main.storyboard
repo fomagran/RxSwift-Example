@@ -993,8 +993,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="qwZ-EJ-f2V"/>
                     <connections>
-                        <outlet property="city" destination="Gcb-LI-bfs" id="7e3-go-gcj"/>
                         <outlet property="humidity" destination="QBw-gA-6Sg" id="QdB-nE-hFY"/>
+                        <outlet property="temperature" destination="Gcb-LI-bfs" id="NZm-q1-e8f"/>
                         <outlet property="textField" destination="FVe-tp-gO3" id="I5F-md-9if"/>
                     </connections>
                 </viewController>
