@@ -32,6 +32,9 @@
 		04B78CE725B7CE06006AE6E2 /* RxJsonApiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B78CE625B7CE06006AE6E2 /* RxJsonApiTableViewController.swift */; };
 		04B78CEA25B7CE1F006AE6E2 /* RxJsonApiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B78CE925B7CE1F006AE6E2 /* RxJsonApiTableViewCell.swift */; };
 		04B78CED25B7CEE4006AE6E2 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B78CEC25B7CEE4006AE6E2 /* Person.swift */; };
+		04B934A925C3AC3900EAC5BE /* WeatherConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B934A825C3AC3900EAC5BE /* WeatherConstants.swift */; };
+		04B934AD25C3C54900EAC5BE /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B934AC25C3C54900EAC5BE /* WeatherViewController.swift */; };
+		04B934B125C3C6D400EAC5BE /* WeatherResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B934B025C3C6D400EAC5BE /* WeatherResult.swift */; };
 		04D6E22725B911D3000538C2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6E22625B911D3000538C2 /* APIService.swift */; };
 		04D6E22A25B914BE000538C2 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6E22925B914BE000538C2 /* OrderViewController.swift */; };
 		04D6E22D25B9168A000538C2 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6E22C25B9168A000538C2 /* MenuViewController.swift */; };
@@ -75,6 +78,9 @@
 		04B78CE925B7CE1F006AE6E2 /* RxJsonApiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxJsonApiTableViewCell.swift; sourceTree = "<group>"; };
 		04B78CEC25B7CEE4006AE6E2 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		04B934A525C3A45900EAC5BE /* Combine.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Combine.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		04B934A825C3AC3900EAC5BE /* WeatherConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherConstants.swift; sourceTree = "<group>"; };
+		04B934AC25C3C54900EAC5BE /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		04B934B025C3C6D400EAC5BE /* WeatherResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResult.swift; sourceTree = "<group>"; };
 		04D6E22625B911D3000538C2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		04D6E22925B914BE000538C2 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		04D6E22C25B9168A000538C2 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 		0444934C2596E6ED0091EE88 /* RxSwift Example */ = {
 			isa = PBXGroup;
 			children = (
+				04B934A725C3AB6E00EAC5BE /* RxWeather */,
 				04A66D5725C110B900A3EB92 /* RxNews */,
 				04A66D4725C0F90700A3EB92 /* RxToDoList */,
 				0436FC1E25BE5E46003ACF73 /* RxPhotoFilter */,
@@ -236,6 +243,16 @@
 				04B78CEC25B7CEE4006AE6E2 /* Person.swift */,
 			);
 			path = RxJsonApi;
+			sourceTree = "<group>";
+		};
+		04B934A725C3AB6E00EAC5BE /* RxWeather */ = {
+			isa = PBXGroup;
+			children = (
+				04B934A825C3AC3900EAC5BE /* WeatherConstants.swift */,
+				04B934AC25C3C54900EAC5BE /* WeatherViewController.swift */,
+				04B934B025C3C6D400EAC5BE /* WeatherResult.swift */,
+			);
+			path = RxWeather;
 			sourceTree = "<group>";
 		};
 		04D6E22525B911BA000538C2 /* RxOrder */ = {
@@ -405,10 +422,12 @@
 				0436FCC125BE6D0F003ACF73 /* PhotoCollectionViewCell.swift in Sources */,
 				04A66D4D25C0FB1400A3EB92 /* ListTableViewCell.swift in Sources */,
 				04B78CEA25B7CE1F006AE6E2 /* RxJsonApiTableViewCell.swift in Sources */,
+				04B934AD25C3C54900EAC5BE /* WeatherViewController.swift in Sources */,
 				047CC63125BFAE4B006EF82E /* FilterService.swift in Sources */,
 				044493522596E6ED0091EE88 /* DisposeExampleViewController.swift in Sources */,
 				04D6E23325B91B60000538C2 /* Menu.swift in Sources */,
 				04A66D5925C1110500A3EB92 /* Constants.swift in Sources */,
+				04B934A925C3AC3900EAC5BE /* WeatherConstants.swift in Sources */,
 				04A66D5D25C1131400A3EB92 /* NewsTableViewController.swift in Sources */,
 				0436FC2425BE5F28003ACF73 /* RxPhotoFilterCollectionViewController.swift in Sources */,
 				04B78CE725B7CE06006AE6E2 /* RxJsonApiTableViewController.swift in Sources */,
@@ -428,6 +447,7 @@
 				04D6E23925B91FA5000538C2 /* Extentsion.swift in Sources */,
 				04D6E22A25B914BE000538C2 /* OrderViewController.swift in Sources */,
 				0436FC2125BE5F15003ACF73 /* RxPhotoFilterViewController.swift in Sources */,
+				04B934B125C3C6D400EAC5BE /* WeatherResult.swift in Sources */,
 				044493502596E6ED0091EE88 /* SceneDelegate.swift in Sources */,
 				04D6E23625B91E39000538C2 /* MenuListViewModel.swift in Sources */,
 			);
