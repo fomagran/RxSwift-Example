@@ -74,6 +74,7 @@
 		04B78CE625B7CE06006AE6E2 /* RxJsonApiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxJsonApiTableViewController.swift; sourceTree = "<group>"; };
 		04B78CE925B7CE1F006AE6E2 /* RxJsonApiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxJsonApiTableViewCell.swift; sourceTree = "<group>"; };
 		04B78CEC25B7CEE4006AE6E2 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		04B934A525C3A45900EAC5BE /* Combine.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Combine.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		04D6E22625B911D3000538C2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		04D6E22925B914BE000538C2 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		04D6E22C25B9168A000538C2 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +148,7 @@
 				0436FC1C25BE590E003ACF73 /* Subject.playground */,
 				047CC63325BFBC1A006EF82E /* Filter.playground */,
 				04A66D5525C10B3300A3EB92 /* Transform.playground */,
+				04B934A525C3A45900EAC5BE /* Combine.playground */,
 			);
 			path = "RxSwift Example";
 			sourceTree = "<group>";

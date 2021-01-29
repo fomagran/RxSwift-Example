@@ -4,6 +4,30 @@ import RxCocoa
 
 let disposeBag = DisposeBag()
 
+
+//let publishSubject = PublishSubject<Int>()
+//
+//publishSubject.subscribe(onNext:{print($0)})
+//
+//publishSubject.onNext(1)
+//publishSubject.onNext(2)
+//publishSubject.onNext(3)
+//1
+//2
+//3
+
+let ob = Observable.just(1)
+let sub1 = ob.subscribe(onNext:{print($0)})
+let sub2 = ob.subscribe(onNext:{print($0)})
+
+
+
+
+
+
+
+
+
 //PublishSubject
 let publishSubject = PublishSubject<String>()
 
