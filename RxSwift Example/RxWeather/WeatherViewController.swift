@@ -41,18 +41,20 @@ class WeatherViewController: UIViewController {
         
         let resource = Resource<WeatherResult>(url:url)
         
-        URLRequest.load(resource: resource)
+        
+        let search = URLRequest.load(resource: resource)
             .observeOn(MainScheduler.instance)
             .catchErrorJustReturn(WeatherResult.empty)
-            .subscribe(onNext:{ result in
-                DispatchQueue.main.async {
-                    let weather = result?.main
-                    self.displayWeather(weather)
-                }
-               
-            })
+        
+        //레이블 바인딩하기
+        search.map{"\($0.main.temp)℉"}
+            .bind(to: self.temperature.rx.text)
             .disposed(by: disposeBag)
         
+        search.map{"\($0.main.humidity)💦"}
+            .bind(to: self.humidity.rx.text)
+            .disposed(by: disposeBag)
+    
     }
     
     private func displayWeather(_ weather:Weather?) {

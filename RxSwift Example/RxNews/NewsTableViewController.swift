@@ -24,11 +24,9 @@ class NewsTableViewController: UITableViewController {
         
         URLRequest.load(resource: ArticlesList.all)
             .subscribe(onNext:{ [weak self]result in
-                if let result = result {
                     self?.articles = result.articles
                     DispatchQueue.main.async {
                         self?.tableView.reloadData()
-                    }
                 }
             }).disposed(by: disposeBag)
       
