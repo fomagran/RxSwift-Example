@@ -41,8 +41,6 @@ class WeatherViewController: UIViewController {
         
         let resource = Resource<WeatherResult>(url:url)
         
-        
-        
         //retry적용시 최대 몇번까지 다시 시도할건지 설정가능
         let search = URLRequest.load(resource: resource)
             .observeOn(MainScheduler.instance)

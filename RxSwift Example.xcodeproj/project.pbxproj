@@ -60,7 +60,6 @@
 		044493592596E6EE0091EE88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0444935B2596E6EE0091EE88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		044D47B325C79A1100598119 /* Driver.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Driver.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		044D47B525C79D6F00598119 /* Error Handling.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Error Handling.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		047104C425C25680001D1BAD /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		047104C825C25B01001D1BAD /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		047CC63025BFAE4B006EF82E /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
@@ -160,7 +159,6 @@
 				04A66D5525C10B3300A3EB92 /* Transform.playground */,
 				04B934A525C3A45900EAC5BE /* Combine.playground */,
 				044D47B325C79A1100598119 /* Driver.playground */,
-				044D47B525C79D6F00598119 /* Error Handling.playground */,
 			);
 			path = "RxSwift Example";
 			sourceTree = "<group>";
