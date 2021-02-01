@@ -42,10 +42,14 @@ class WeatherViewController: UIViewController {
         let resource = Resource<WeatherResult>(url:url)
         
         
-        //드라이브 사용하기
+        
+        //에러발견시 적용
         let search = URLRequest.load(resource: resource)
             .observeOn(MainScheduler.instance)
-            .asDriver(onErrorJustReturn: WeatherResult.empty )
+            .catchError{error in
+                print(error.localizedDescription)
+                return Observable.just(WeatherResult.empty)
+            }.asDriver(onErrorJustReturn: WeatherResult.empty)
         
         //드라이브 적용
         search.map{"\($0.main.temp)℉"}
