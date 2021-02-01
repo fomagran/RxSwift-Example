@@ -42,17 +42,18 @@ class WeatherViewController: UIViewController {
         let resource = Resource<WeatherResult>(url:url)
         
         
+        //드라이브 사용하기
         let search = URLRequest.load(resource: resource)
             .observeOn(MainScheduler.instance)
-            .catchErrorJustReturn(WeatherResult.empty)
+            .asDriver(onErrorJustReturn: WeatherResult.empty )
         
-        //레이블 바인딩하기
+        //드라이브 적용
         search.map{"\($0.main.temp)℉"}
-            .bind(to: self.temperature.rx.text)
+            .drive(self.temperature.rx.text)
             .disposed(by: disposeBag)
         
         search.map{"\($0.main.humidity)💦"}
-            .bind(to: self.humidity.rx.text)
+            .drive(self.humidity.rx.text)
             .disposed(by: disposeBag)
     
     }
