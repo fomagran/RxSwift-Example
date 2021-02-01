@@ -43,9 +43,10 @@ class WeatherViewController: UIViewController {
         
         
         
-        //에러발견시 적용
+        //retry적용시 최대 몇번까지 다시 시도할건지 설정가능
         let search = URLRequest.load(resource: resource)
             .observeOn(MainScheduler.instance)
+            .retry(3)
             .catchError{error in
                 print(error.localizedDescription)
                 return Observable.just(WeatherResult.empty)
