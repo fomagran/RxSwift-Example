@@ -20,18 +20,19 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.textField.rx.value
-            //같은 뷰컨트롤러이기때문에 weak self를 쓸 필요가 없다.
+        //텍스트필드에 수정이 끝났을때 엔터나 리턴키를 누르면 API 실행
+        self.textField.rx.controlEvent(.editingDidEndOnExit)
+            .asObservable()
+            .map{self.textField.text}
             .subscribe(onNext:{ city in
                 if let city = city {
                     if city.isEmpty {
                         self.displayWeather(nil)
-                    }else{
+                    }else {
                         self.fetchWeather(by: city)
                     }
                 }
-            })
-            .disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
     }
     
     private func fetchWeather(by city:String) {
