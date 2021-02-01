@@ -16,6 +16,9 @@
 		044493552596E6ED0091EE88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044493532596E6ED0091EE88 /* Main.storyboard */; };
 		044493572596E6EE0091EE88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044493562596E6EE0091EE88 /* Assets.xcassets */; };
 		0444935A2596E6EE0091EE88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044493582596E6EE0091EE88 /* LaunchScreen.storyboard */; };
+		044D47BA25C7A6B600598119 /* RxNewsMVVMTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D47B925C7A6B600598119 /* RxNewsMVVMTableViewController.swift */; };
+		044D47BF25C7A70800598119 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D47BE25C7A70800598119 /* ArticleModel.swift */; };
+		044D47C525C7A80B00598119 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D47C425C7A80B00598119 /* ArticleViewModel.swift */; };
 		047104C525C25680001D1BAD /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047104C425C25680001D1BAD /* Article.swift */; };
 		047104C925C25B01001D1BAD /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047104C825C25B01001D1BAD /* ArticleTableViewCell.swift */; };
 		047CC63125BFAE4B006EF82E /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CC63025BFAE4B006EF82E /* FilterService.swift */; };
@@ -60,6 +63,9 @@
 		044493592596E6EE0091EE88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0444935B2596E6EE0091EE88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		044D47B325C79A1100598119 /* Driver.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Driver.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		044D47B925C7A6B600598119 /* RxNewsMVVMTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNewsMVVMTableViewController.swift; sourceTree = "<group>"; };
+		044D47BE25C7A70800598119 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
+		044D47C425C7A80B00598119 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		047104C425C25680001D1BAD /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		047104C825C25B01001D1BAD /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		047CC63025BFAE4B006EF82E /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 		0444934C2596E6ED0091EE88 /* RxSwift Example */ = {
 			isa = PBXGroup;
 			children = (
+				044D47B825C7A6A100598119 /* RxNews+MVVM */,
 				04B934A725C3AB6E00EAC5BE /* RxWeather */,
 				04A66D5725C110B900A3EB92 /* RxNews */,
 				04A66D4725C0F90700A3EB92 /* RxToDoList */,
@@ -161,6 +168,32 @@
 				044D47B325C79A1100598119 /* Driver.playground */,
 			);
 			path = "RxSwift Example";
+			sourceTree = "<group>";
+		};
+		044D47B825C7A6A100598119 /* RxNews+MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				044D47C325C7A7FD00598119 /* ViewModel */,
+				044D47BD25C7A6FB00598119 /* Model */,
+				044D47B925C7A6B600598119 /* RxNewsMVVMTableViewController.swift */,
+			);
+			path = "RxNews+MVVM";
+			sourceTree = "<group>";
+		};
+		044D47BD25C7A6FB00598119 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				044D47BE25C7A70800598119 /* ArticleModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		044D47C325C7A7FD00598119 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				044D47C425C7A80B00598119 /* ArticleViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		047104C325C25675001D1BAD /* Model */ = {
@@ -443,13 +476,16 @@
 				04AEB7212599873600CA9795 /* LoginExampleViewController.swift in Sources */,
 				04D6E23025B916A4000538C2 /* MenuTableViewCell.swift in Sources */,
 				04B78CED25B7CEE4006AE6E2 /* Person.swift in Sources */,
+				044D47BA25C7A6B600598119 /* RxNewsMVVMTableViewController.swift in Sources */,
 				04A66D4A25C0F99000A3EB92 /* ListViewController.swift in Sources */,
 				04A66D5025C0FCD800A3EB92 /* AddListViewController.swift in Sources */,
 				04B934B425C3C78F00EAC5BE /* URLRequest+Extensions.swift in Sources */,
 				04D6E23925B91FA5000538C2 /* Extentsion.swift in Sources */,
 				04D6E22A25B914BE000538C2 /* OrderViewController.swift in Sources */,
+				044D47BF25C7A70800598119 /* ArticleModel.swift in Sources */,
 				0436FC2125BE5F15003ACF73 /* RxPhotoFilterViewController.swift in Sources */,
 				04B934B125C3C6D400EAC5BE /* WeatherResult.swift in Sources */,
+				044D47C525C7A80B00598119 /* ArticleViewModel.swift in Sources */,
 				044493502596E6ED0091EE88 /* SceneDelegate.swift in Sources */,
 				04D6E23625B91E39000538C2 /* MenuListViewModel.swift in Sources */,
 			);
