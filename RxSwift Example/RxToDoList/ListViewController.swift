@@ -15,8 +15,8 @@ class ListViewController: UIViewController {
     @IBOutlet weak var table:UITableView!
     
     let disposeBag = DisposeBag()
-    private var filteredTasks = [Task]()
-    private var tasks = BehaviorRelay<[Task]>(value: [])
+    var tasks = [Task]()
+    var filteredTasks = [Task]()
     
     
 
@@ -24,21 +24,19 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let nav = segue.destination as? UINavigationController,let addVC = nav.viewControllers.first  as? AddListViewController  else { fatalError()}
         
-        addVC.taskSubjectObservable
-            .subscribe(onNext:{ [unowned self] in
-                let priority = Priority(rawValue: self.segment.selectedSegmentIndex - 1)
-                var existingTasks = self.tasks.value
-                existingTasks.append($0)
-                self.tasks.accept(existingTasks)
-                //All일때는 nil이라서 filterTasks로 필터해줘야함.
-                self.filterTasks(by: priority)
+        let nav = segue.destination as? UINavigationController
+        let addVC = nav?.viewControllers.first as? AddListViewController
+        
+        addVC?.taskObservable
+            .subscribe(onNext: { [unowned self] task in
+                let priority = Priority(rawValue: self.segment.selectedSegmentIndex-1)
+                self.tasks.append(task)
+                self.filteredTask(priority: priority)
             })
             .disposed(by: disposeBag)
-        
-            
     }
     
     private func updateTableView()  {
@@ -47,29 +45,18 @@ class ListViewController: UIViewController {
         }
     }
     
-    //priority로 필터하기
-    private func filterTasks(by priority:Priority?) {
+    private func filteredTask(priority:Priority?) {
         if priority == nil {
-            self.filteredTasks = self.tasks.value
+            filteredTasks = tasks
         }else{
-            self.tasks
-                .map{$0.filter{$0.priority == priority!}}
-                .subscribe(onNext:{ [weak self] tasks in
-                    self?.filteredTasks = tasks
-                })
-                .disposed(by: disposeBag)
+           filteredTasks = tasks.filter{$0.priority == Priority(rawValue: segment.selectedSegmentIndex-1)}
         }
         updateTableView()
-
-    }
-    
-    @IBAction func add(_ sender: Any) {
     }
     
     //segment로 필터링하기
     @IBAction func priorityValueChanged(segmentedControl:UISegmentedControl)  {
-        let priority = Priority(rawValue: segmentedControl.selectedSegmentIndex - 1)
-        filterTasks(by: priority)
+        filteredTask(priority: Priority(rawValue: segmentedControl.selectedSegmentIndex-1))
     }
     
 

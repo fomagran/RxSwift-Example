@@ -7,11 +7,10 @@
 
 import Foundation
 
-//enum으로 priority 설정하기
 enum Priority:Int {
-    case hight
+    case high
     case medium
-    case los
+    case low
 }
 
 struct Task {
