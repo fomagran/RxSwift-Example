@@ -18,8 +18,6 @@ class ListViewController: UIViewController {
     var tasks = [Task]()
     var filteredTasks = [Task]()
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         

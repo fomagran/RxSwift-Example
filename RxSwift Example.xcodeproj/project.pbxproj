@@ -71,6 +71,7 @@
 		047CC63025BFAE4B006EF82E /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
 		047CC63325BFBC1A006EF82E /* Filter.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Filter.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		047D62F725A55ECE00697BF2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		047E190325CA3F5C007A26C2 /* Relay.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Relay.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		04A66D4925C0F99000A3EB92 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		04A66D4C25C0FB1400A3EB92 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		04A66D4F25C0FCD800A3EB92 /* AddListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +161,7 @@
 				04B934B325C3C78F00EAC5BE /* URLRequest+Extensions.swift */,
 				044493562596E6EE0091EE88 /* Assets.xcassets */,
 				0444935B2596E6EE0091EE88 /* Info.plist */,
+				047E190325CA3F5C007A26C2 /* Relay.playground */,
 				04F584D3259AE25500A614DD /* RxSwiftTest.playground */,
 				0436FC1C25BE590E003ACF73 /* Subject.playground */,
 				047CC63325BFBC1A006EF82E /* Filter.playground */,
