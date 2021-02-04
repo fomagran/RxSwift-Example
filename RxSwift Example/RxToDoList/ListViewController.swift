@@ -15,7 +15,7 @@ class ListViewController: UIViewController {
     @IBOutlet weak var table:UITableView!
     
     let disposeBag = DisposeBag()
-    var tasks = [Task]()
+    var tasks = BehaviorRelay<[Task]>(value: [])
     var filteredTasks = [Task]()
     
     override func viewDidLoad() {
@@ -31,7 +31,9 @@ class ListViewController: UIViewController {
         addVC?.taskObservable
             .subscribe(onNext: { [unowned self] task in
                 let priority = Priority(rawValue: self.segment.selectedSegmentIndex-1)
-                self.tasks.append(task)
+                var value = self.tasks.value
+                value.append(task)
+                tasks.accept(value)
                 self.filteredTask(priority: priority)
             })
             .disposed(by: disposeBag)
@@ -45,9 +47,12 @@ class ListViewController: UIViewController {
     
     private func filteredTask(priority:Priority?) {
         if priority == nil {
-            filteredTasks = tasks
+            filteredTasks = tasks.value
         }else{
-           filteredTasks = tasks.filter{$0.priority == Priority(rawValue: segment.selectedSegmentIndex-1)}
+            tasks.map{
+                $0.filter{$0.priority == priority}
+            }.subscribe{ [unowned self] tasks in self.filteredTasks = tasks }
+            .disposed(by: disposeBag)
         }
         updateTableView()
     }
