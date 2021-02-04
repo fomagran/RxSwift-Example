@@ -10,27 +10,30 @@ import RxSwift
 import RxCocoa
 
 class NewsTableViewController: UITableViewController {
-    
-    let disposeBag = DisposeBag()
-    private var articles = [Article]()
-    
-    
+    var articles = [Article]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        populateNews()
+        
+        let url = URL(string: TOP_HEADLINE_URL)!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data else { return }
+ 
+            if let articles = try? JSONDecoder().decode(ArticleList.self, from: data).articles {
+                self.articles = articles
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+        }.resume()
     }
     
-    private func populateNews() {
-        
-        URLRequest.load(resource: ArticlesList.all)
-            .subscribe(onNext:{ [weak self]result in
-                    self?.articles = result.articles
-                    DispatchQueue.main.async {
-                        self?.tableView.reloadData()
-                }
-            }).disposed(by: disposeBag)
-      
-    }
+    
+
     
     
 
