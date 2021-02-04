@@ -10,10 +10,17 @@ import Foundation
 struct Article:Codable {
     let title:String
     let description:String?
+    
+
 }
 
 struct ArticleList:Codable {
     let articles:[Article]
+    
+    static var all:Resource<ArticleList> = {
+        let url = URL(string: TOP_HEADLINE_URL)!
+        return Resource(url: url)
+    }()
 }
 
 

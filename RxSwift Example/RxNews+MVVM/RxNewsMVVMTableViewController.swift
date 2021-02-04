@@ -26,7 +26,7 @@ class RxNewsMVVMTableViewController: UITableViewController {
 
         URLRequest.load(resource: ArticlesListModel.all)
             .subscribe(onNext:{ articleResponse in
-                let articles = articleResponse.articles
+                let articles = articleResponse!.articles
                 self.articleListViewModel = ArticleListViewModel(articles)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()

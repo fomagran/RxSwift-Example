@@ -51,11 +51,11 @@ class WeatherViewController: UIViewController {
             }.asDriver(onErrorJustReturn: WeatherResult.empty)
         
         //드라이브 적용
-        search.map{"\($0.main.temp)℉"}
+        search.map{"\($0!.main.temp)℉"}
             .drive(self.temperature.rx.text)
             .disposed(by: disposeBag)
         
-        search.map{"\($0.main.humidity)💦"}
+        search.map{"\($0!.main.humidity)💦"}
             .drive(self.humidity.rx.text)
             .disposed(by: disposeBag)
     

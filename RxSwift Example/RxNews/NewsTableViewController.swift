@@ -15,24 +15,22 @@ class NewsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: TOP_HEADLINE_URL)!
+        URLRequest.load(resource: ArticleList.all)
+            .subscribe(onNext:{ [weak self]
+                
+                articleList in
+                if let articleList = articleList?.articles {
+                    self?.articles = articleList
+                    self?.tableViewUpdate()
+                }
+            }).disposed(by: disposeBag)
         
-        Observable.just(url)
-            .flatMap{ url -> Observable<Data> in
-                let request = URLRequest(url: url)
-                return URLSession.shared.rx.data(request: request)
-            }.map{
-                data -> [Article]? in
-                return try? JSONDecoder().decode(ArticleList.self, from: data).articles
-            }.subscribe(onNext:{ articles in
-                if let articles = articles {
-                    self.articles = articles
-                }
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            })
-            .disposed(by: disposeBag)
+    }
+    
+    private func tableViewUpdate() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
 
