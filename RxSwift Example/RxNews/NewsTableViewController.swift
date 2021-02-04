@@ -10,31 +10,30 @@ import RxSwift
 import RxCocoa
 
 class NewsTableViewController: UITableViewController {
+    let disposeBag = DisposeBag()
     var articles = [Article]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let url = URL(string: TOP_HEADLINE_URL)!
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
         
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data else { return }
- 
-            if let articles = try? JSONDecoder().decode(ArticleList.self, from: data).articles {
-                self.articles = articles
-            }
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-            
-        }.resume()
+        Observable.just(url)
+            .flatMap{ url -> Observable<Data> in
+                let request = URLRequest(url: url)
+                return URLSession.shared.rx.data(request: request)
+            }.map{
+                data -> [Article]? in
+                return try? JSONDecoder().decode(ArticleList.self, from: data).articles
+            }.subscribe(onNext:{ articles in
+                if let articles = articles {
+                    self.articles = articles
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            })
+            .disposed(by: disposeBag)
     }
-    
-    
-
-    
     
 
     // MARK: - Table view data source
