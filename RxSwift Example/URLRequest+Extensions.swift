@@ -24,7 +24,7 @@ extension URLRequest {
             }.map{
                 response,data -> T in
                 if 200..<300 ~= response.statusCode {
-                    return try! JSONDecoder().decode(T.self, from: data)
+                    return try JSONDecoder().decode(T.self, from: data)
                 }else{
                     throw RxCocoaURLError.httpRequestFailed(response: response, data: data)
                 }
@@ -34,8 +34,8 @@ extension URLRequest {
 
 extension URL {
     static func urlForWeatherAPI(city:String) -> URL? {
-        return URL(string: "http://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\(API_KEY)")
+        
+        return URL(string: "http://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=1a5b183fc3a82b25cc1095a55e549a0b")
     }
 }
-
 

@@ -24,15 +24,15 @@ class RxNewsMVVMTableViewController: UITableViewController {
 
     private func populateNews() {
 
-        URLRequest.load(resource: ArticlesListModel.all)
-            .subscribe(onNext:{ articleResponse in
-                let articles = articleResponse!.articles
-                self.articleListViewModel = ArticleListViewModel(articles)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-
-            }).disposed(by: disposeBag)
+//        URLRequest.load(resource: ArticlesListModel.all)
+//            .subscribe(onNext:{ articleResponse in
+//                let articles = articleResponse!.articles
+//                self.articleListViewModel = ArticleListViewModel(articles)
+//                DispatchQueue.main.async {
+//                    self.tableView.reloadData()
+//                }
+//
+//            }).disposed(by: disposeBag)
 
     }
 
