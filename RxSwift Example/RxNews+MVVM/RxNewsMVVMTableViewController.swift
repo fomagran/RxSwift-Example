@@ -14,8 +14,11 @@ import RxCocoa
 class RxNewsMVVMTableViewController: UITableViewController {
     
     let disposeBag = DisposeBag()
-    private var articleListViewModel:ArticleListViewModel!
+    
+    var articles = [ArticleModel]()
 
+    private var viewModel:ArticleViewModel!
+    private var articleListViewModel:ArticleListViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +26,19 @@ class RxNewsMVVMTableViewController: UITableViewController {
     }
 
     private func populateNews() {
-
-//        URLRequest.load(resource: ArticlesListModel.all)
-//            .subscribe(onNext:{ articleResponse in
-//                let articles = articleResponse!.articles
-//                self.articleListViewModel = ArticleListViewModel(articles)
-//                DispatchQueue.main.async {
-//                    self.tableView.reloadData()
-//                }
-//
-//            }).disposed(by: disposeBag)
-
+        
+        let resource = Resource<ArticleListModel>(url:URL(string: TOP_HEADLINE_URL)!)
+        
+        URLRequest.load(resource: resource)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext:{ articleList in
+                self.articles = articleList.articles
+                self.articleListViewModel = ArticleListViewModel(articleList.articles)
+                self.tableView.reloadData()
+            })
+            .disposed(by: disposeBag)
+        
+        
     }
 
 
@@ -46,22 +51,21 @@ class RxNewsMVVMTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return articleListViewModel == nil ? 0 : self.articleListViewModel.articles.count
+        return articleListViewModel == nil ? 0 : articleListViewModel.viewModels.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell") as! ArticleTableViewCell
-
-        let aritcleViewModel = self.articleListViewModel.articleAt(indexPath.row)
-
-        aritcleViewModel.title.asDriver(onErrorJustReturn: "")
+        
+        let articleViewModel = articleListViewModel.viewModels[indexPath.row]
+    
+        articleViewModel.title.asDriver(onErrorJustReturn: "")
             .drive(cell.titleLabel.rx.text)
             .disposed(by: disposeBag)
-
-        aritcleViewModel.description.asDriver(onErrorJustReturn: "")
+        
+        articleViewModel.description.asDriver(onErrorJustReturn: "")
             .drive(cell.descriptionLabel.rx.text)
             .disposed(by: disposeBag)
-
 
         return cell
     }

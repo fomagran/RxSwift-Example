@@ -9,21 +9,16 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-struct ArticleListViewModel  {
-    let articles:[ArticleViewModel]
+
+struct ArticleListViewModel {
     
-}
-
-extension ArticleListViewModel {
+    let viewModels:[ArticleViewModel]
+    
     init(_ articles:[ArticleModel]) {
-        self.articles = articles.compactMap(ArticleViewModel.init)
+        
+        self.viewModels = articles.compactMap(ArticleViewModel.init)
     }
-}
-
-extension ArticleListViewModel {
-    func articleAt(_ index:Int) -> ArticleViewModel {
-        return self.articles[index]
-    }
+ 
 }
 
 struct ArticleViewModel {
@@ -34,10 +29,8 @@ struct ArticleViewModel {
         self.article = article
     }
     
-}
-
-extension ArticleViewModel {
     var title:Observable<String> {
+        
         return Observable<String>.just(article.title)
     }
     

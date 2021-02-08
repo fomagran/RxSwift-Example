@@ -15,15 +15,12 @@ class NewsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        URLRequest.load(resource: ArticleList.all)
-//            .subscribe(onNext:{ [weak self]
-//                
-//                articleList in
-//                if let articleList = articleList?.articles {
-//                    self?.articles = articleList
-//                    self?.tableViewUpdate()
-//                }
-//            }).disposed(by: disposeBag)
+        URLRequest.load(resource: ArticleList.all)
+            .subscribe(onNext:{ [weak self]
+                articleList in
+                self?.articles = articleList.articles
+                    self?.tableViewUpdate()
+            }).disposed(by: disposeBag)
         
     }
     
